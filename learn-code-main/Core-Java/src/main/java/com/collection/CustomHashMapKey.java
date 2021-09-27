@@ -1,7 +1,7 @@
 package com.collection;
 
 import java.util.HashMap;
-
+ 
 class Account {
 	private int accountNumber;
 	private String accountHolderName;

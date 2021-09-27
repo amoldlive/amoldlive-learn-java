@@ -13,6 +13,7 @@
 		<module>Core-Java</module>
 		<module>Core-Spring</module>
 		<module>Design-Patterns</module>
+		<module>Multithreading-core-SE</module>
 	</modules>
 
 
