@@ -37,7 +37,7 @@ public class ExecutorMain {
 		
 		//Executor - interface | Executors - factory class
 		Executor executor=Executors.newSingleThreadExecutor();
-		executor.execute(runnable); // take runnable as arg
+		executor.execute(runnable); // take only runnable as arg
 		
 	}
 }
