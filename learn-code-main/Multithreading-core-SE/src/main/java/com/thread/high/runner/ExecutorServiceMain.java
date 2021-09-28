@@ -24,14 +24,15 @@ public class ExecutorServiceMain {
 
 		UserDao userDao = new UserDao();
 		userDao.cleanTable(); // trucating table for fresh data
-		
-		/*Single thread will be created and execute the task*/
-		//ExecutorService executorService = Executors.newSingleThreadExecutor();
-		
-		/*3 threads will be created and exxecute the task*/ 
-		ExecutorService executorService = Executors.newFixedThreadPool(3); 
+
+		/* Single thread will be created and execute the task */
+		// ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+		/* 3 threads will be created and exxecute the task */
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
 
 		recordList.forEach(record -> {
+			// submit -> takes runnable & collable as arg
 			Future<Integer> future = executorService.submit(new UserProcessor(record, userDao));
 			try {
 				System.out.println("Final Result : " + future.get());
