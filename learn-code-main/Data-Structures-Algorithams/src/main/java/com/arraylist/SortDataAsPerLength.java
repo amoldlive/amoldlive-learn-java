@@ -17,6 +17,11 @@ public class SortDataAsPerLength {
 		System.out.println();
 
 		solution2(fruits);
+		
+		System.out.println();
+		
+		fruits = Arrays.asList("apple", "mango", "apple", "guava", "pineapple", "guava", "apple");
+		solution3(fruits);
 	}
 
 	private static void solution1(List<String> fruits) {
@@ -56,5 +61,9 @@ public class SortDataAsPerLength {
 		for (Integer key : set) {
 			System.out.print(map.get(key) + " ");
 		}
+	}
+
+	private static void solution3(List<String> fruits) {
+			fruits.stream().sorted((l1,l2)->l1.length()-l2.length()).collect(Collectors.toList()).forEach(System.out::println);
 	}
 }

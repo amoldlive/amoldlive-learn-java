@@ -15,10 +15,16 @@ public class LinearSearch {
 	 * the last index or element is not present in the array. 
 	 */
 	public static void searchElement(int arr[],int element) {
+		boolean isFound=false;
 		for(int i=0;i<arr.length;i++) {
 			if(arr[i]==element) {
+				isFound=true;
 				System.out.println("Element : "+element +" | Position : " + (i+1));
 			}
+		}
+		
+		if(!isFound) {
+			System.out.println("Element Not Found");
 		}
 	}
 }
