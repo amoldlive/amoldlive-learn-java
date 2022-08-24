@@ -268,6 +268,46 @@ class CustomLinkedList {
 
 }
 
+/* linked list extende */
+class LinkedListExtended {
+	Node head;
+
+	public void addFirst(int data) {
+		Node node=new Node(data);
+		if(null!=head) {
+			Node temp=head;
+			node.next=temp;
+			head=node;
+		}else {
+			head=node;
+		}
+	}
+
+	public void addLast(int data) {
+		Node node=new Node(data);
+		if(null!=head) {
+			Node temp=head;
+			while(temp.next!=null) {
+				temp=temp.next;
+			}
+			temp=node;
+		}else {
+			head=node;
+		}
+	}
+	
+	public void print() {
+		if (null != head) {
+			Node temp = head;
+			while (temp != null) {
+				System.out.println(temp.data);
+				temp=temp.next;
+			}
+		}
+	}
+
+}
+
 public class LinkedListMain {
 
 	public static void main(String[] args) {
@@ -281,6 +321,17 @@ public class LinkedListMain {
 		list.print();
 		list.reverse();
 		list.print();
+		
+		
+		System.out.println();
+		System.out.println();
+		
+		LinkedListExtended extended=new LinkedListExtended();
+		extended.addFirst(4);
+		extended.addFirst(5);
+		extended.addFirst(6);
+		extended.addLast(10);
+		extended.print();
 	}
 
 	private static void linkedListTEst() {
@@ -329,6 +380,10 @@ public class LinkedListMain {
 		list3.add(50);
 		System.out.println("is Pallindrom : " + list3.isPallindrom());
 		System.out.println("is Pallindrom using stack: " + list3.isPallindromUsingStack());
+		
+		
+		
+		
 
 	}
 

@@ -24,7 +24,7 @@ public class LongestNonRepeatatingSubString {
 				set.remove(s.charAt(j++)); //release
 			}
 			set.add(s.charAt(i));
-			max=Math.max(max, i-j+1);
+			max=Math.max(max, set.size());
 		}
 
 		return max;
